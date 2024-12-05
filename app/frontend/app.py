@@ -43,12 +43,16 @@ def main():
                 story_data = story_response.json()
 
                 # Request images
-                image_payload = {"story_paragraphs": [page["text"] for page in story_data["pages"]]}  # Use paragraphs as input
-                image_response = requests.post(f"{BACKEND_URL}/generate_images", json=image_payload)
-                if image_response.status_code != 200:
-                    st.error(f"Error generating images: {image_response.text}")
+                if "pages" in story_data and story_data["pages"]:
+                    image_payload = {"story_paragraphs": [page["text"] for page in story_data["pages"]]}
+                    image_response = requests.post(f"{BACKEND_URL}/generate_images", json=image_payload)
+                    if image_response.status_code != 200:
+                        st.error(f"Error generating images: {image_response.text}")
+                        return
+                    image_data = image_response.json()
+                else:
+                    st.error("No story pages received from the server")
                     return
-                image_data = image_response.json()
 
                 # Save story and images in session state
                 if story_data["status"] == "success" and image_data["status"] == "success":

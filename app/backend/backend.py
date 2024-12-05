@@ -24,7 +24,9 @@ async def generate_story_endpoint(data: dict):
 @app.post("/generate_images")
 async def generate_images_endpoint(data: dict):
     try:
-        images = generate_images(data, app.state.image_model)
+        # Extract story_paragraphs from the data dictionary
+        story_paragraphs = data.get("story_paragraphs", [])
+        images = generate_images(story_paragraphs, app.state.image_model)
         return {"status": "success", "images": images}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
