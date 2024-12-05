@@ -1,5 +1,5 @@
 requirements.txt
 readme.md
-./myenv
-./libray
+myenv/
+libray/
 .env
