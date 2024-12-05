@@ -1,0 +1,40 @@
+/* style.css */
+body {
+    background-image: url('assets/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
+    /* Adjust text color for readability */
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    /* Kid-friendly font */
+}
+
+
+h1, h2, h3, h4, h5, h6, p {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+
+.stButton>button {
+    background-color: #f39c12;
+    /* Custom button color */
+    color: white;
+    border-radius: 10px;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.stButton>button:hover {
+    background-color: #e67e22;
+    transform: scale(1.05);
+}
+
+[data-testid="stAppViewContainer"] {
+    background-image: url('assets/your_image.jpg');
+    background-size: cover;
+}
