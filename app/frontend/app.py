@@ -24,9 +24,9 @@ def main():
 
     # Dropdown menus for user input
     characters = st.multiselect("Choose characters:", ["Nael", "Naim", "Venom", "Maui", "Tyranosaurus Rex", "Godzilla"], default=["Nael", "Naim"])
-    setting = st.selectbox("Choose the setting:", ["Space", "Castle", "Forest", "Beach"])
+    setting = st.selectbox("Choose the setting:", ["Space", "Castle", "Forest", "Beach", "London"])
     action = st.selectbox("Choose the action:", ["Battle", "Treasure Hunt", "Adventure", "Science experiment"])
-    ending = st.selectbox("Choose the ending:", ["Victory", "Friendship", "Discovery", "Enigma"])
+    ending = st.selectbox("Choose the ending:", ["Funny", "Victory", "Discovery", "Enigma"])
 
     # Submit button
     generate_button = st.button("Generate Comic", key="generate_button")
